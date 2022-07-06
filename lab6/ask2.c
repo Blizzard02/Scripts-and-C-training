@@ -1,3 +1,9 @@
+/*Να γραφεί πρόγραμμα σε C που θα δημιουργεί δύο νέα processes.
+Τα νέα processes θα πρέπει να τυπώνουν το καθένα το δικό του
+process id και το process id του process που τα δημιούργησε (το
+parent process id που θα τυπώνεται από τα 2 νέα processes θα
+πρέπει να είναι το ίδιο)*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
