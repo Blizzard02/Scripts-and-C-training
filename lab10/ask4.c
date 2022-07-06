@@ -1,3 +1,10 @@
+/*Να γραφεί πρόγραμμα σε C που θα δημιουργεί ένα νέο process.
+To process θα τρέχει συνεχώς και τυπώνει κάθε 2 δευτερόλεπτα
+”Luke, I Am Your Father””. Θα πρέπει να υλοποιήσετε έναν
+signal handler που θα κάνει pause και continue το process που
+δημιουργήθηκε. Θα πρέπει να τυπώνονται κατάλληλα μηνύματα
+κατά την αλλαγή κατάστασης του process.*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
