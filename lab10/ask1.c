@@ -1,3 +1,6 @@
+/* Να γραφεί πρόγραμμα σε C που θα τρέχει συνεχώς και θα αγνοεί
+το signal SIGTSTP*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
