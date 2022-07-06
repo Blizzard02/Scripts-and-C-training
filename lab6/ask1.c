@@ -1,3 +1,7 @@
+/*Να γραφεί πρόγραμμα σε C που θα δημιουργεί ένα νέο process.
+Το νέο process θα πρέπει να τυπώνει το δικό του process id και
+το process id του process που το δημιούργησε*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
