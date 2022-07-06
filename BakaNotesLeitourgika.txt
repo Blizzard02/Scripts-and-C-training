@@ -1,5 +1,5 @@
 OTI ΕΧΟΥΜΕ ΓΡΑΨΕΙ ΣΤΟ TERMINAL ΣΤΟ ΕΡΓΑΣΤΗΡΙΟ.
-
+http://www.macs.hw.ac.uk/~hwloidl/Courses/LinuxIntro/x864.html gia sh files
 
 Pwd
 
