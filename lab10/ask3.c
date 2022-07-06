@@ -1,3 +1,7 @@
+/*Να γραφεί πρόγραμμα σε C που θα τρέχει συνεχώς. Όποτε δέχεται
+ένα signal SIGINT θα αυξάνει έναν counter. Όταν ο counter πάρει
+την τιμή 5 θα τερματίζεται το πρόγραμμα*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
