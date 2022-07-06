@@ -1,3 +1,6 @@
+/*Να γραφεί πρόγραμμα σε C που θα τρέχει συνεχώς, θα αγνοεί το
+signal SIGTSTP και θα τυπώνει ”Received SIGTSTP”.*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
