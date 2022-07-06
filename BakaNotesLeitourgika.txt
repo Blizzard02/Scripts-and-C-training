@@ -1,0 +1,241 @@
+OTI ΕΧΟΥΜΕ ΓΡΑΨΕΙ ΣΤΟ TERMINAL ΣΤΟ ΕΡΓΑΣΤΗΡΙΟ.
+
+
+Pwd
+
+~$ standard user
+
+~# ola dikaiwmata
+
+Echo $SHELL
+
+date
+
+df (πόσος χώρος στον δίσκο)
+
+free ποση διαθέσιμη μνήμη
+
+Command -options arguments
+
+Options = διακοπτες
+
+Man (κ εντολη που θέλω)  τι κανει η εντολή κ πως χρησιμοποιείται
+
+ls -l
+
+-l Desktop
+
+ls bin
+
+ls -a
+
+Η τελεία  συμβολίζει το current directory, οι 2 τελειες συμβολιζουν τον αμεσως πανω καταλογο
+
+ls /bin (όλες οι εντολές που θα δούμε)
+
+Clear για καθαρισμα τερμιναλ
+
+Πως μεταφέρομαι σε αλλον κατάλογο?
+cd Desktop
+
+History : τελευταίες 500 εντολές
+
+Θέλω να δημιουργήσω νεο directory:
+mkdir dir1
+
+Πως δημιουργω αρχεια? touch file1 file 2
+
+cp = copy. cp file1 dir1
+
+Copy and rename: cp file1 dir1/file15
+
+Ολα περιεχομενα του dir1 στο dir2: cp dir1/* dir2/
+(Asteraki means everything inside)
+
+Αν θελω αντιγραψω ολο τον καταλογο μαζι με περιεχόμενα σε αλλον
+cp -r dir1/ dir3/
+
+mv file1 file100: μετακινηση κ μετονομασμα
+March 31, 2022
+
+								03/31/2022
+mv file1 dir1 - μεταφορά
+mv file1 file2 - μετονομασία
+
+Νεο εργαστήριο αρχή:
+mkdir test
+cd test
+
+Touch f1 f2 f3
+
+Ls
+
+Cp f3 f4
+
+Ls
+
+Mv f4 f5
+
+Ls
+
+Mv f1 f2 dir2 --> files σε προορισμό
+
+Ls * κατι σα το tree?
+
+cp dir2/f και TAB δειχνει κατευθείαν τι εχει μεσα το ντιρ2 απο f
+
+cp dir2/f1 dir3/dir4
+
+Cp dir2 dir4
+
+
+
+cp dir2/* dir4 το αστεράκι αναφερεται στα περιεχομενα του dir2
+
+mv f* dir1 ολα τα files του τεστ στο dir1
+
+rm 2/ διαγραφη ολα τα files εκει που βρηκες dir που να τελειωνει σε 2
+
+ln -s dir1/f3 link_to_f3
+
+nano link_to_f3 μας παει σε text editor στον οποιο γραφω οτι θελω παταω ctrl O για αποθηκευση εντερ και μετά ctrl X για να βγω
+
+cat link_to_f3 για να δω τι εγραψα
+
+
+type ls τι type εντολής
+
+Με το ελληνικό ερωτηματικο ; Διαχωριζω τις εντολές πχ cd dir1;ls
+
+cd .. παω ενα πισω στο path
+
+cd dir1;ls:cd ..
+
+alias foo="cd /home/user/test/dir1;ls;cd -"
+
+Με το foo οπου κ αν ειμαι με γυρναει εκει που εβαλα
+
+Για να το καταργησω: unalias foo
+
+Cd ~ με παει home directory
+											April 7, 2022
+
+ls /usr/bin > ls-output.txt
+
+Relative path αλλαζω το output path
+
+Cat ls-output.txt (βλεπω τι εχει μεσα)
+
+overwrite, >> append
+
+Πχ:
+
+Command1 | command2 = το κομαντ ενα μπαίνει ως standard input στο command2
+
+Less ls.txt (η λες με αφηνει να κανω σκρολ κ να κοιταω θωθτα)
+
+ls /usr/bin/ | sort | sort | grepubuntu
+
+Sed : επεξεργασία κειμενου
+
+echo 'aaabbbccc' | sed 's/b/B/' το κανει aaaBbbccc
+
+Αν το ιδιο αλλα sed 's/b/B/g' το κανει aaaBBBccc
+										April 14, 2022
+
+α=3
+Echo $a κ βγαζει τη τιμη της
+
+nano script.sh text editor
+
+Control O kai Control X
+
+./script.sh περμ denied γιατι δεν εχει εξ αρχης το execute δικαιωμα, οποτε
+
+chmod u+x script.sh
+
+
+Mesa sto text nano script.sh
+If [ $a -eq 2 ]
+Then
+Echo something
+Else
+Echo something
+fi
+
+For i in seq 1 2 10
+do
+echo $i
+done
+
+
+
+
+										05/09/2022
+NANO SCANNER2.SH
+fc=0
+fd=0
+Path = $1
+for i in ls $path ;do
+echo $i
+If [ -f $i ];then
+echo it is a file
+fc =$(($fc+1))
+Else
+Echo it is a dir
+dc=$(($dc+1))
+done
+Echo found $fc files and $dc dirs
+
+NANO SCANNER2.SH (συνέχεια)
+fc=0
+fd=0
+check dir() {
+Path = $1
+for i in ls $path ;do
+echo $i
+If [ -f $i ];then
+echo it is a file
+fc =$(($fc+1))
+Else
+Echo it is a dir
+dc=$(($dc+1))
+check dir $1/$i
+done
+}
+check dir $1
+Echo found $fc files and $dc dirs
+
+NANO SCANNER2.SH (συνέχεια)
+fc=0
+fd=0
+max file=" "
+max size=0
+check dir() {
+Path = $1
+for i in ls $path ;do
+echo $i
+If [ -f $i ];then
+echo it is a file
+fc =$(($fc+1))
+size= stat =c %s $1/$i
+echo $size
+if [size -gt max size ];then
+Max_size=$size
+max_file= $1/$i
+Else
+Echo it is a dir
+dc=$(($dc+1))
+check dir $1/$i
+done
+}
+check dir $1
+Echo found $fc files and $dc dirs
+Pstree : ολες οι διεργασιες στο πισι μας rn
+
+extras: για να τρέξουμε ενα .c αρχείο:
+gcc file.c -o onomapouthelw
+./onomapouthelw
+
+
+##BakaNotes
