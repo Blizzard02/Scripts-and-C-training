@@ -1,3 +1,7 @@
+/*Να γραφεί client-server εφαρμογή σε C στην οποία ο client θα
+στέλνει μια αριθμητική παράσταση στον server, o server θα την
+υπολογίζει και θα στέλνει το αποτέλεσμα στον client.*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
